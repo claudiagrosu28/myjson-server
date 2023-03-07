@@ -111,7 +111,7 @@
 
       const musicTop = new MusicTop();
 
-      fetch('http://localhost:3000/melodii')
+      fetch('https://my-json-server.typicode.com/claudiagrosu28/myjson-server/melodii')
         .then((response) => response.json())
         .then((json) => addSongstoMusicTopJSON(json))
         .catch(error => console.log("error: ", error.message));
@@ -151,7 +151,7 @@
       }
 
       function addSongtoJSON(name,artist,date,votes,id){
-            fetch('http://localhost:3000/melodii',{
+            fetch('https://my-json-server.typicode.com/claudiagrosu28/myjson-server/melodii',{
                 method:'POST',
                 body:JSON.stringify({
                   name : name,
@@ -169,7 +169,7 @@
       }
 
       function voteUpdateJSON(id,votes){
-        fetch('http://localhost:3000/melodii')
+        fetch('https://my-json-server.typicode.com/claudiagrosu28/myjson-server/melodii')
           .then((response) => response.json())
           .then((json) => {
             var x = json;
@@ -179,7 +179,7 @@
                 idno=x[i].id;
               }
             }
-            fetch('http://localhost:3000/melodii/'+idno,{
+            fetch('https://my-json-server.typicode.com/claudiagrosu28/myjson-server/melodii'+idno,{
               method:'PATCH',
               body:JSON.stringify({
                 votes:votes
